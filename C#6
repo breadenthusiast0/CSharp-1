@@ -1,0 +1,25 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de tres digitos: ");
+    string input = Console.ReadLine();
+    int numero = Convert.ToInt32(input);
+
+    int digito1 = numero / 100;
+    int digito2 = (numero % 100) / 10;
+    int digito3 = numero % 10;
+
+    if(digito1 % digito2 == 0 || 
+       digito1 % digito3 == 0 || 
+       digito2 % digito1 == 0 || 
+       digito2 % digito3 == 0 || 
+       digito3 % digito1 == 0 || 
+       digito3 % digito2 == 0){
+      Console.WriteLine("Al menos un digito es multiplo de los otros.");
+    } else {
+      Console.WriteLine("Ningun digito es multiplo de los otros.");
+    }
+  }
+}
