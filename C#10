@@ -1,0 +1,34 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero entero: ");
+    int numero1 = int.Parse(Console.ReadLine());
+    Console.WriteLine("Escriba otro numero entero: ");
+    int numero2 = int.Parse(Console.ReadLine());
+
+    if (numero1 == numero2) {
+    Console.WriteLine("Los numeros son iguales");
+    } else {
+      
+    }
+
+    if (Math.Abs(numero1 - numero2) <= 10) {
+      if (numero1 > numero2) {
+        while (numero1 > numero2) {
+          Console.WriteLine(numero2);
+          numero2++;
+        }
+      }  
+      if (numero1 < numero2) {
+        while (numero1 <= numero2) {
+          Console.WriteLine(numero1);
+          numero1++;
+        }
+      }
+    } else {
+      Console.WriteLine("La diferencia entre los numeros es major de 10");
+    }
+  }
+}
