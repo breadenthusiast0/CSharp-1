@@ -12,9 +12,7 @@
 
 7.    Leer tres números enteros y determinar cuál es el mayor. Usar solamente dos variables.
 
-8.    Leer un número entero de cinco dígitos y determinar si es un número Capicúa. 
-
-    Ej. 15651, 59895. 
+8.    Leer un número entero de cinco dígitos y determinar si es un número Capicúa. Ej. 15651, 59895. 
 
 9.    Leer un número entero de cuatro dígitos y determinar si el segundo dígito es igual al penúltimo.
 
