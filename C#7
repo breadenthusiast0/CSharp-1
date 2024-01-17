@@ -1,0 +1,24 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de tres digitos: ");
+    int input = int.Parse(Console.ReadLine());
+    int numero = input;
+    
+    Console.WriteLine("Escriba otro numero de tres digitos: ");
+    input = int.Parse(Console.ReadLine());
+    if (input > numero) {
+      numero = input;
+    }
+
+    Console.WriteLine("Escriba otro numero de tres digitos: ");
+    input = int.Parse(Console.ReadLine());
+    if (input > numero) {
+      numero = input;
+    }
+    
+    Console.WriteLine("El numero mayor es: " + numero);
+  }
+}
