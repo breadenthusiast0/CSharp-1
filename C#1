@@ -1,0 +1,13 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de dos digitos: ");
+    string input = Console.ReadLine();
+    int numero = Convert.ToInt32(input);
+    
+    int suma = (numero / 10) + (numero % 10);
+    Console.WriteLine("La suma de los digitos es: " + suma);
+  }
+}
