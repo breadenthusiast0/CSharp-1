@@ -1,0 +1,39 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de dos digitos: ");
+    string input = Console.ReadLine();
+    int numero = Convert.ToInt32(input);
+
+    int primerDigito = numero / 10;
+    int segundoDigito = numero % 10;
+
+    bool esPrimo1 = true;
+    for (int i = 2; i <= Math.Sqrt(primerDigito); i++){
+        if (primerDigito % i == 0){
+            esPrimo1 = false;
+            break;
+        }
+    }
+    if (esPrimo1){
+        Console.WriteLine("El primer digito es primo");
+    }else{
+        Console.WriteLine("El primer digito no es primo");
+    }
+
+    bool esPrimo2 = true;
+    for (int i = 2; i <= Math.Sqrt(segundoDigito); i++){
+        if (segundoDigito % i == 0){
+            esPrimo2 = false;
+            break;
+        }
+    }
+    if (esPrimo2){
+        Console.WriteLine("El segundo digito es primo");
+    }else{
+        Console.WriteLine("El segundo digito no es primo");
+    }
+  }
+}
