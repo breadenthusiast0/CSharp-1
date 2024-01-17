@@ -1,0 +1,19 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    Console.WriteLine("Escriba un numero de cinco digitos: ");
+    int input = int.Parse(Console.ReadLine());
+    int d1 = input / 10000;
+    int d2 = (input % 10000) / 1000;
+    int d3 = (input % 1000) / 100;
+    int d4 = (input % 100) / 10;
+    int d5 = input % 10;
+
+    if (d1 == d5 && d2 == d4) {
+      Console.WriteLine("El numero es capicua");
+    } else {
+      Console.WriteLine("El numero no es capicua");
+    }
+  }
+}
