@@ -1,0 +1,28 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de dos digitos: ");
+    string input = Console.ReadLine();
+    int numero = Convert.ToInt32(input);
+
+    bool esPrimo = true;
+    for (int i = 2; i <= Math.Sqrt(numero); i++){
+        if (numero % i == 0){
+            esPrimo = false;
+            break;
+        }
+    }
+    if (esPrimo){
+        Console.WriteLine("El numero es primo");
+    }else{
+        Console.WriteLine("El numero no es primo");
+    }
+    if (numero < 0){
+        Console.WriteLine("El numero es negativo");
+    }else{
+        Console.WriteLine("El numero es positivo");
+    }
+  }
+}
