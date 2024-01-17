@@ -1,0 +1,17 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    Console.WriteLine("Escriba un numero de cuatro digitos: ");
+    int input = int.Parse(Console.ReadLine());
+    int num2 = (input % 1000) / 100;
+    int num3 = (input % 100) / 10;
+
+    if (num2 == num3) {
+      Console.WriteLine("El segundo y penultimo digito son iguales");
+    } else {
+      Console.WriteLine("El segundo y penultimo digito no son iguales");
+    }
+  }
+}
