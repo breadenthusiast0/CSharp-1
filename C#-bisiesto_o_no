@@ -1,0 +1,29 @@
+using System;
+class Program {
+  
+  public static void Main (string[] args) {
+    imprimir("Escriba un año: ");
+    int input = int.Parse(Console.ReadLine());
+    bool resultado = esBisiesto(input);
+    if (resultado == true) {
+      imprimir("El año " + input + " es bisiesto");
+    } else {
+      imprimir("El año " + input + " no es bisiesto");
+    }
+  }
+  
+  public static bool esBisiesto(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+
+  static void imprimir(string mensaje) {
+    Console.WriteLine(mensaje);
+  }
+}
