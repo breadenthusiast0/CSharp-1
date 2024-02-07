@@ -1,0 +1,60 @@
+// 5.Leer 10 números enteros, almacenarlos en un arreglo y
+// determinar en qué posición se encuentra el número
+// primo con mayor cantidad de dígitos pares.
+
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+
+    int[] enteros = new int[10];
+    int mayorCantidadDigitosPares = 0;
+    int posicion = -1;
+
+    for (int i = 0; i < enteros.Length; i++){
+      Console.WriteLine("Ingrese un numero entero:");
+      enteros[i] = int.Parse(Console.ReadLine());
+
+    }
+
+    for (int i = 0; i < enteros.Length; i++) {
+        if (esPrimo(enteros[i])) {
+            int cantidadDigitosPares = ContarDigitosPares(enteros[i]);
+            if (cantidadDigitosPares > mayorCantidadDigitosPares) {
+                mayorCantidadDigitosPares = cantidadDigitosPares;
+                posicion = i;
+            }
+        }
+    }
+
+    if (posicion != -1) {
+        Console.WriteLine($"El número primo con la mayor cantidad de dígitos pares es {enteros[posicion]}");
+        Console.WriteLine($"Está en la posición {posicion + 1}");
+    } else {
+        Console.WriteLine("No se encontró ningún número primo en el arreglo.");
+    }
+  }
+
+  static bool esPrimo(int numero){
+    if(numero <= 1) return false;
+    if(numero == 2) return true;
+    for(int i = 2; i <= numero/2; i++){
+      if(numero % i == 0){
+        return false;
+      }
+    }
+    return true; 
+  }
+
+  static int ContarDigitosPares(int numero) {
+    int conteo = 0;
+    while (numero != 0) {
+      int digito = numero % 10;
+      if (digito % 2 == 0) {
+        conteo++;
+      }
+      numero /= 10;
+    }
+    return conteo;
+  }
+}
