@@ -1,26 +1,23 @@
-﻿// Ejemplo 1, Herencia basica:
-Perro miPerro = new Perro();
-miPerro.Comer();
-miPerro.Ladrar();
-Console.WriteLine("");
+﻿int llamadasTotales = 0;
+double facturaTotal = 0;
 
-// Ejemplo 2, Sobrescritura de metodos:
-Figura1 miFigura = new Circulo1();
-miFigura.Dibujar();
-Console.WriteLine("");
+while (true)
+{
+    Console.WriteLine("Para registrar una nueva llamada:");
 
-// Ejemplo 3, Herencia con constructor:
-Empleado emp = new Empleado("Diego" , "Developer");
-emp.Info();
-emp.InfoDeEmpleado();
-Console.WriteLine("");
+    Console.WriteLine("indique el codigo de franja para el origen de la llamada (1, 2, 3): ");
+    int valor1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("indique el codigo de franja para el destino de la llamada (1, 2, 3): ");
+    int valor2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("indique la duracion de la llamada (en segundos): ");
+    int valor3 = Convert.ToInt32(Console.ReadLine());
 
-// Ejemplo 4, Herencia con propiedades abstractas:
-Circulo2 miCirculo = new Circulo2(5);
-miCirculo.ImprimirArea();
-Console.WriteLine("");
+    Llamada llamadaNueva = new Llamada(valor1, valor2, valor3);
+    llamadasTotales += 1;
 
-// Ejemplo 5, Herencia con interfaces:
-Piano miPiano = new Piano();
-miPiano.Afinar();
-miPiano.Tocar();
+    llamadaNueva.Facturacion();
+    facturaTotal += llamadaNueva.factura;
+    
+    Console.WriteLine("Llamadas totales: " + llamadasTotales);
+    Console.WriteLine("Factura total: " + facturaTotal);
+}
