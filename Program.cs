@@ -1,23 +1,18 @@
-﻿int llamadasTotales = 0;
-double facturaTotal = 0;
+﻿Pasaje NuevoViaje1 = new Pasaje("Santo Domingo - San Pedro", "Platinum", 17, 5);
+Pasaje NuevoViaje2 = new Pasaje("Santo Domingo - Santiago", "Gold", 12, 3);
 
-while (true)
-{
-    Console.WriteLine("Para registrar una nueva llamada:");
+Console.WriteLine("Ruta:\t\t\t" + NuevoViaje1.ruta);
+Console.WriteLine("Clase:\t\t\t" + NuevoViaje1.categoria);
+Console.WriteLine("Asientos Llenos:\t" + NuevoViaje1.asientosLlenos);
+Console.WriteLine("Asientos Disponibles:\t" + NuevoViaje1.asientosDisponibles);
+NuevoViaje1.CalculoDePrecio();
+Console.WriteLine("Precio:\t\t\t" + NuevoViaje1.precio);
 
-    Console.WriteLine("indique el codigo de franja para el origen de la llamada (1, 2, 3): ");
-    int valor1 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("indique el codigo de franja para el destino de la llamada (1, 2, 3): ");
-    int valor2 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("indique la duracion de la llamada (en segundos): ");
-    int valor3 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("");
 
-    Llamada llamadaNueva = new Llamada(valor1, valor2, valor3);
-    llamadasTotales += 1;
-
-    llamadaNueva.Facturacion();
-    facturaTotal += llamadaNueva.factura;
-    
-    Console.WriteLine("Llamadas totales: " + llamadasTotales);
-    Console.WriteLine("Factura total: " + facturaTotal);
-}
+Console.WriteLine("Ruta:\t\t\t" + NuevoViaje2.ruta);
+Console.WriteLine("Clase:\t\t\t" + NuevoViaje2.categoria);
+Console.WriteLine("Asientos Llenos:\t" + NuevoViaje2.asientosLlenos);
+Console.WriteLine("Asientos Disponibles:\t" + NuevoViaje2.asientosDisponibles);
+NuevoViaje2.CalculoDePrecio();
+Console.WriteLine("Precio:\t\t\t" + NuevoViaje2.precio);
